@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game_Win.gd" type="Script" id=1]
+[ext_resource path="res://Assets/chocolate-chip-cookie-16.jpeg" type="Texture" id=2]
+
+[node name="Game_Win" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 369.0
+margin_top = 125.0
+margin_right = 558.0
+margin_bottom = 208.0
+text = "You win.
+
+Here, have a cookie"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 433, 234 )
+rotation = 4.71239
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 373.0
+margin_top = 329.0
+margin_right = 481.0
+margin_bottom = 372.0
+text = "Get going git"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

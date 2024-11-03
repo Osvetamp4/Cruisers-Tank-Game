@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion1.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "explode",
+"speed": 15.0
+} ]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="radius1" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="collsion1" type="CollisionShape2D" parent="radius1"]
+scale = Vector2( 2.5, 2.5 )
+shape = SubResource( 1 )
+
+[node name="radius2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="collision2" type="CollisionShape2D" parent="radius2"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 2 )
+
+[node name="explodeSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "explode"
+
+[connection signal="body_entered" from="radius1" to="." method="_on_radius1_body_entered"]
+[connection signal="body_entered" from="radius2" to="." method="_on_radius2_body_entered"]
+[connection signal="animation_finished" from="explodeSprite" to="." method="_on_explodeSprite_animation_finished"]

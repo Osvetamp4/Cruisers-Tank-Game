@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Title_Screen.gd" type="Script" id=1]
+
+[node name="Title_Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.096
+anchor_bottom = 0.058
+margin_left = 442.0
+margin_top = 291.0
+margin_right = 452.696
+margin_bottom = 276.2
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 682.0
+margin_top = 482.0
+margin_right = 1032.0
+margin_bottom = 602.0
+text = "Core Mechanics and basic gameplay available for testing. Reporting any bugs or crashes will be extremely helpful!
+Everything is currently super super rough and WIP."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 437.0
+margin_top = 202.0
+margin_right = 512.0
+margin_bottom = 221.0
+rect_scale = Vector2( 2, 2 )
+text = "Cruisers"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 51.0
+margin_top = 438.0
+margin_right = 531.0
+margin_bottom = 677.0
+text = "INSTRUCTIONS:
+WASD to move. A and D to rotate. W and D to move forwards and backwards. Tank Controls.
+
+
+Left Click to shoot. E to switch weapons."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

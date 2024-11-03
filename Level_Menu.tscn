@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Level_Menu.gd" type="Script" id=1]
+
+[node name="Level_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.141
+anchor_bottom = 0.055
+margin_left = 360.0
+margin_top = 276.0
+margin_right = 279.616
+margin_bottom = 296.0
+text = "Level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+anchor_right = 0.141
+anchor_bottom = 0.055
+margin_left = 472.0
+margin_top = 276.0
+margin_right = 391.616
+margin_bottom = 296.0
+text = "Level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+anchor_right = 0.141
+anchor_bottom = 0.055
+margin_left = 592.0
+margin_top = 276.0
+margin_right = 511.616
+margin_bottom = 296.0
+text = "Level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 424.0
+margin_top = 369.0
+margin_right = 633.0
+margin_bottom = 443.0
+text = "(There isn't any level progression rn. Pick any level you want.)"
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 744.0
+margin_top = -1.0
+margin_right = 1015.0
+margin_bottom = 72.0
+text = "wait, I want to go back"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]

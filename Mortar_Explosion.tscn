@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion5.png" type="Texture" id=1]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion1.png" type="Texture" id=3]
+[ext_resource path="res://Mortar_Explosion.gd" type="Script" id=4]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/kenney_topdowntanksredux/PNG/Retina/explosion3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/hero-content-shadow.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "explode",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 58.0086
+
+[node name="Mortar_Explosion" type="Node2D"]
+position = Vector2( 272, 146 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 1 )
+animation = "explode"
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
