@@ -13,3 +13,11 @@ For future reference, I have learned to seperate my code even further. A major p
 https://github.com/user-attachments/assets/6ec49ffc-b089-4cd0-a041-a6ae6a677e60
 
 This is a demo playthrough of the game, showcasing the different weapons that the player has at their disposal as well as the different types of enemies and the level layouts.
+
+
+**HOW TO PLAY**
+___
+
+Download and extract from the corresponding .zip files.
+
+Currently availible are the versions for MacOS and Windows.
