@@ -20,4 +20,4 @@ ___
 
 Download and extract from the corresponding .zip files.
 
-Currently availible are the versions for MacOS and Windows.
+Currently available are the versions for MacOS and Windows.
